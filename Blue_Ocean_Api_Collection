@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "6aa1e016-6ed9-43d5-8524-589b857b162b",
+		"name": "Blue Ocean",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33334821"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Category 6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{blue_ocean}}/api/categories",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/categories?page=1&limit=10&search=Category 10&sort=createdAt",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "Category 10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/categories/698a239d26494f2e198ef331",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"698a239d26494f2e198ef331"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "698a239d26494f2e198ef331",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Category 7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{blue_ocean}}/api/categories/698a239926494f2e198ef32f",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"698a239926494f2e198ef32f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/categories/698a239d26494f2e198ef331",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"698a239d26494f2e198ef331"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SubCategory Count",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/categories/aggregation/subcategory-count",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"aggregation",
+								"subcategory-count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubCategory",
+			"item": [
+				{
+					"name": "Create SubCategory",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Sub Cat 2 2\",\r\n    \"categoryId\":\"698a239526494f2e198ef32d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{blue_ocean}}/api/subcategories",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All SubCategories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/subcategories",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"subcategories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "createdAt",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "phy",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "698a239126494f2e198ef32b",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SubCategory by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/subcategories/698a38694119ae6a8bbafa71",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"subcategories",
+								"698a38694119ae6a8bbafa71"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update SubCategory",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Sub Cat 1 4\",\r\n    \"categoryId\":\"698a239926494f2e198ef32f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{blue_ocean}}/api/subcategories/698a385e4119ae6a8bbafa6e",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"subcategories",
+								"698a385e4119ae6a8bbafa6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete SubCategory",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/subcategories/698a38594119ae6a8bbafa6b",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"subcategories",
+								"698a38594119ae6a8bbafa6b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Chy\",\r\n    \"categoryIds\":[\"698a239126494f2e198ef32b\" , \"698a239526494f2e198ef32d\"],\r\n    \"subCategoryIds\":[\"698a38504119ae6a8bbafa65\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{blue_ocean}}/api/courses",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/courses?page=1&limit=10&search=Physics&categoryId=698a239126494f2e198ef32b&subCategoryId=698a239126494f2e198ef15b&sort=createdAt",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "Physics"
+								},
+								{
+									"key": "categoryId",
+									"value": "698a239126494f2e198ef32b"
+								},
+								{
+									"key": "subCategoryId",
+									"value": "698a239126494f2e198ef15b"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/courses/698a3fbe61ccfeb41161f8ab",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"698a3fbe61ccfeb41161f8ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Biology\",\r\n    \"categoryIds\":[\"698a239126494f2e198ef32b\" , \"698a239526494f2e198ef32d\"],\r\n    \"subCategoryIds\":[\"698a38504119ae6a8bbafa65\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{blue_ocean}}/api/courses/698a3fbe61ccfeb41161f8ab",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"698a3fbe61ccfeb41161f8ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{blue_ocean}}/api/courses/698a3f4561ccfeb41161f89c",
+							"host": [
+								"{{blue_ocean}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"698a3f4561ccfeb41161f89c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
